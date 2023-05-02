@@ -1,3 +1,4 @@
+#include "SnakeBoard.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
@@ -22,13 +23,11 @@ int main()
 
     /*Initialize what I need for the snake game. 
     VertexArray of colored screen squares. Vector2i for Snake body/head. Array for location of food.*/
-    VertexArray screen;
-    screen.setPrimitiveType(Points);
     int sizeX = 1000;
     int sizeY = 600;
     int rows = 20; //these numbers create 50 by 50 pixel squares
     int columns = 12;
-    screen.resize(sizeX*sizeY);
+    SnakeBoard board(sizeX,sizeY,rows,columns,width,height);
     Vector2i snake; //
     Vector2i foodLocation; //dynamic food location (size of 1 for the single point of food)
 
@@ -68,37 +67,37 @@ int main()
             }
         }
         //Updates
-        for(int j = 0; j < sizeX; j++)
+        /*for(int j = 0; j < sizeX; j++)
             {
                 for(int i = 0; i < sizeY; i++)
                 {
                     screen[j + i * sizeX].position = { ((width-sizeX)/2)+(float)j,((height-sizeY)/2)+(float)i };
-                    if((j % (sizeX/rows))-(sizeX/rows) <= 0 && (i % (sizeY/columns))-(sizeY/columns) <= 0)
+                    if((j % (2*(sizeX/rows)))-(sizeX/rows) <= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
                     {
-                        screen[j + i * sizeX].color = sf::Color::White;
+                        screen[j + i * sizeX].color = sf::Color::Green;
                     }
-                    else if((j % (sizeX/rows))-(sizeX/rows) >= 0 && (i % (sizeY/columns))-(sizeY/columns) <= 0)
+                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
                     {
-                        screen[j + i * sizeX].color = sf::Color::White;
+                        screen[j + i * sizeX].color = { 1, 50, 32 };
                     }
-                    else if((j % (sizeX/rows))-(sizeX/rows) <= 0 && (i % (sizeY/columns))-(sizeY/columns) >= 0)
+                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) <= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) >= 0)
                     {
-                        screen[j + i * sizeX].color = sf::Color::White;
+                        screen[j + i * sizeX].color = { 1, 50, 32 };
                     }
-                    else if((j % (sizeX/rows))-(sizeX/rows) >= 0 && (i % (sizeY/columns))-(sizeY/columns) >= 0)
+                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) >= 0)
                     {
-                        screen[j + i * sizeX].color = sf::Color::White;
+                        screen[j + i * sizeX].color = sf::Color::Green;
                     }
 
                     //screen[j + i * sizeX].color = sf::Color::White;
                 }
-            }
+            }*/
 
     
     //Draw window
         window.clear();
         
-        window.draw(screen);
+        window.draw(board.getScreen());
         window.display();
     }
     return 0;

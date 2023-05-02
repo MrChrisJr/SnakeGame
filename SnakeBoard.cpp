@@ -2,6 +2,8 @@
 
 SnakeBoard::SnakeBoard(int sizeX, int sizeY, int rows, int columns, float width, float height)
 {
+    m_height = height;
+    m_width = width;
     m_screen.setPrimitiveType(Points);
     m_screen.resize(width*height);
     for(int j = 0; j < sizeX; j++)
@@ -32,4 +34,14 @@ SnakeBoard::SnakeBoard(int sizeX, int sizeY, int rows, int columns, float width,
 VertexArray SnakeBoard::getScreen()
 {
     return m_screen;
+}
+
+float SnakeBoard::getWidth()
+{
+    return m_width;
+}
+
+float SnakeBoard::getHeight()
+{
+    return m_height;
 }

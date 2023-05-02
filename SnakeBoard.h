@@ -17,8 +17,12 @@ class SnakeBoard
         //constructor (sizeX of inner screen, sizeY of inner screen, desired number of rows,
         //desired number of columns, width of full screen, height of full screen)
         VertexArray getScreen();
+        float getWidth();
+        float getHeight();
     private:
         VertexArray m_screen;
+        float m_width;
+        float m_height;
 };
 
 #endif

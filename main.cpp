@@ -21,8 +21,8 @@ int main()
 	// Create and open a window for the game
 	RenderWindow window(vm, "Snake Game!", Style::Default);
 
-    /*Initialize what I need for the snake game. 
-    VertexArray of colored screen squares. Vector2i for Snake body/head. Array for location of food.*/
+    /*Initialize what I need for the snake game board. 
+    Made a class called SnakeBoard to build the board with specifications*/
     int sizeX = 1000;
     int sizeY = 600;
     int rows = 20; //these numbers create 50 by 50 pixel squares

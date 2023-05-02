@@ -66,37 +66,12 @@ int main()
                 directionToMove = 4;
             }
         }
-        //Updates
-        /*for(int j = 0; j < sizeX; j++)
-            {
-                for(int i = 0; i < sizeY; i++)
-                {
-                    screen[j + i * sizeX].position = { ((width-sizeX)/2)+(float)j,((height-sizeY)/2)+(float)i };
-                    if((j % (2*(sizeX/rows)))-(sizeX/rows) <= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
-                    {
-                        screen[j + i * sizeX].color = sf::Color::Green;
-                    }
-                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
-                    {
-                        screen[j + i * sizeX].color = { 1, 50, 32 };
-                    }
-                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) <= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) >= 0)
-                    {
-                        screen[j + i * sizeX].color = { 1, 50, 32 };
-                    }
-                    else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) >= 0)
-                    {
-                        screen[j + i * sizeX].color = sf::Color::Green;
-                    }
-
-                    //screen[j + i * sizeX].color = sf::Color::White;
-                }
-            }*/
+    //Updates
+        
 
     
     //Draw window
         window.clear();
-        
         window.draw(board.getScreen());
         window.display();
     }

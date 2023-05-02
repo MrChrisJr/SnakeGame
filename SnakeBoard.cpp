@@ -11,7 +11,7 @@ SnakeBoard::SnakeBoard(int sizeX, int sizeY, int rows, int columns, float width,
             m_screen[j + i * sizeX].position = { ((width-sizeX)/2)+(float)j,((height-sizeY)/2)+(float)i };
             if((j % (2*(sizeX/rows)))-(sizeX/rows) <= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
             {
-                m_screen[j + i * sizeX].color = sf::Color::Green;
+                m_screen[j + i * sizeX].color = { 1, 200, 32 };
             }
             else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) <= 0)
             {
@@ -23,7 +23,7 @@ SnakeBoard::SnakeBoard(int sizeX, int sizeY, int rows, int columns, float width,
             }
             else if((j % (2*(sizeX/rows)))-(sizeX/rows) >= 0 && (i % (2*(sizeY/columns)))-(sizeY/columns) >= 0)
             {
-                m_screen[j + i * sizeX].color = sf::Color::Green;
+                m_screen[j + i * sizeX].color = { 1, 200, 32 };
             }
         }
     }
